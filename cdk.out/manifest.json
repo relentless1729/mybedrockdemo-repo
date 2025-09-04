@@ -1,0 +1,305 @@
+{
+  "version": "34.0.0",
+  "artifacts": {
+    "AwsBedrockLangchainPythonCdkStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "AwsBedrockLangchainPythonCdkStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "AwsBedrockLangchainPythonCdkStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "AwsBedrockLangchainPythonCdkStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/169fbda8f73a758cdc5a2fd814ded1ed2a5233ef04850e11209ed06f141d0596.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "AwsBedrockLangchainPythonCdkStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "AwsBedrockLangchainPythonCdkStack.assets"
+      ],
+      "metadata": {
+        "/AwsBedrockLangchainPythonCdkStack/LambdaRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaRole3A44B857"
+          }
+        ],
+        "/AwsBedrockLangchainPythonCdkStack/LambdaRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaRoleDefaultPolicy75625A82"
+          }
+        ],
+        "/AwsBedrockLangchainPythonCdkStack/boto3-lambda-layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "boto3lambdalayer7DAA939E"
+          }
+        ],
+        "/AwsBedrockLangchainPythonCdkStack/langchain-lambda-layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "langchainlambdalayer9A550CAA"
+          }
+        ],
+        "/AwsBedrockLangchainPythonCdkStack/langchain-bedrock-lambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "langchainbedrocklambda4126827D"
+          }
+        ],
+        "/AwsBedrockLangchainPythonCdkStack/langchain-bedrock-lambda/bedrock-permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "langchainbedrocklambdabedrockpermission739BE40E"
+          }
+        ],
+        "/AwsBedrockLangchainPythonCdkStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/AwsBedrockLangchainPythonCdkStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/AwsBedrockLangchainPythonCdkStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/AwsBedrockLangchainPythonCdkStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "AwsBedrockLangchainPythonCdkStack"
+    },
+    "AwsBedrockLangchainCodePipeline.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "AwsBedrockLangchainCodePipeline.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "AwsBedrockLangchainCodePipeline": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "AwsBedrockLangchainCodePipeline.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c34bb4f49152a619db22922b84d223ce213026140a6b15751a782e8e570a9f92.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "AwsBedrockLangchainCodePipeline.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "AwsBedrockLangchainCodePipeline.assets"
+      ],
+      "metadata": {
+        "/AwsBedrockLangchainCodePipeline/ValidateProjectRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ValidateProjectRole9339C0E3"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/ValidateProjectRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ValidateProjectRoleDefaultPolicy963D8115"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/ValidateProject/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ValidateProject162C395B"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/DeployProjectRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeployProjectRole0C7F6EB1"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/DeployProjectRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeployProjectRoleDefaultPolicyB3525A14"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/DeployProject/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeployProject1CF7CB79"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/ArtifactsBucketEncryptionKey/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineArtifactsBucketEncryptionKeyFCBFEC1A"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/ArtifactsBucketEncryptionKeyAlias/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineArtifactsBucketEncryptionKeyAlias484F7AC6"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineArtifactsBucketC0B65DBD"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/ArtifactsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineArtifactsBucketPolicy28B95D07"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineRoleE192935F"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineRoleDefaultPolicyFAE09666"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineC797374E"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Source/GitHubSource/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineSourceGitHubSourceCodePipelineActionRole87111F15"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Source/GitHubSource/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineSourceGitHubSourceCodePipelineActionRoleDefaultPolicy37864DBB"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Validate/ValidateTemplates/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineValidateValidateTemplatesCodePipelineActionRole56A291CB"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Validate/ValidateTemplates/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineValidateValidateTemplatesCodePipelineActionRoleDefaultPolicyBC147915"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Approve/Approve/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineApproveCodePipelineActionRole6623386A"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Approve/Approve/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineApproveCodePipelineActionRoleDefaultPolicy498FAA58"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Approve/Approve/TopicResource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineApproveTopicResource9061B3B9"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Approve/Approve/TopicResource/vahgar.aruak@gmail.com/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineApproveTopicResourcevahgararuakgmailcomE8795EDA"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Deploy/DeployStack/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineDeployDeployStackCodePipelineActionRole26F9F255"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BedrockLangchainPipeline/Deploy/DeployStack/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockLangchainPipelineDeployDeployStackCodePipelineActionRoleDefaultPolicy6F762454"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/AwsBedrockLangchainCodePipeline/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "AwsBedrockLangchainCodePipeline"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

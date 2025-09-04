@@ -1,0 +1,6 @@
+--only-binary=:all:
+langchain==0.3.27
+langchain-community==0.3.29
+pydantic==2.11.7
+# crucial: avoid source build
+numpy==1.26.4
