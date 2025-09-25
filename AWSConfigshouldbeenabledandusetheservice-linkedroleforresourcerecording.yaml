@@ -1,1 +1,70 @@
-Sorry - this model is unable to respond to this request.
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Enables AWS Config and configures the service-linked role for resource recording
+
+Parameters:
+  ConfigRecorderName:
+    Type: String
+    Default: config-recorder
+    Description: The name of the AWS Config recorder
+
+  ConfigBucketName:
+    Type: String
+    Default: config-bucket
+    Description: The name of the S3 bucket to store AWS Config logs
+
+  ConfigDeliveryChannelName:
+    Type: String
+    Default: config-delivery-channel
+    Description: The name of the AWS Config delivery channel
+
+Resources:
+
+  ConfigRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: config.amazonaws.com
+            Action: 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSConfigRole
+
+  ConfigBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref ConfigBucketName
+      VersioningConfiguration:
+        Status: Enabled
+
+  ConfigDeliveryChannel:
+    Type: AWS::Config::DeliveryChannel
+    Properties:
+      Name: !Ref ConfigDeliveryChannelName
+      S3BucketName: !Ref ConfigBucket
+
+  ConfigRecorder:
+    Type: AWS::Config::ConfigurationRecorder
+    Properties:
+      Name: !Ref ConfigRecorderName
+      RoleARN: !GetAtt ConfigRole.Arn
+      RecordingGroup:
+        AllSupported: true
+        IncludeGlobalResourceTypes: true
+
+Outputs:
+  ConfigRecorderName:
+    Description: The name of the AWS Config recorder
+    Value: !Ref ConfigRecorder
+
+  ConfigBucketName:
+    Description: The name of the S3 bucket to store AWS Config logs
+    Value: !Ref ConfigBucket
+
+  ConfigDeliveryChannelName:
+    Description: The name of the AWS Config delivery channel
+    Value: !Ref ConfigDeliveryChannel
+```
